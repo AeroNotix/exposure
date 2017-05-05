@@ -8,7 +8,6 @@
 (defun add-expose-hook (kw-name fn)
   (let* ((existing-hooks (getf exposed kw-name))
          (additional-hook (append (list fn) existing-hooks)))
-    (format t "~A~%" existing-hooks)
     (setf (getf exposed kw-name) additional-hook)
     exposed))
 
